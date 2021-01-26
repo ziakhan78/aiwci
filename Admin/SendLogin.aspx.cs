@@ -168,18 +168,11 @@ public partial class Admin_SendLogin : System.Web.UI.Page
             string strMessage = "";
             StreamReader sr1 = new StreamReader(readFileName);
 
-            strMessage = sr1.ReadToEnd();
-
-           // strMessage = strMessage.Replace("xxxDistrictNo", distNo.ToString());
-          //  strMessage = strMessage.Replace("xxxYears", years);
-          //  strMessage = strMessage.Replace("xxxWebsite", website);
+            strMessage = sr1.ReadToEnd();         
             strMessage = strMessage.Replace("xxxPresident", presidentName);
             //strMessage = strMessage.Replace("xxxClub", clubName);
             strMessage = strMessage.Replace("xxxEmail", email);
-            strMessage = strMessage.Replace("xxxPassword", password);
-
-           // strMessage = strMessage.Replace("xxxFrom", sDt.ToString("dd MMM yyyy"));
-           // strMessage = strMessage.Replace("xxxTo", eDt.ToString("dd MMM yyyy"));
+            strMessage = strMessage.Replace("xxxPassword", password);       
 
             mail.Body = strMessage;
             sr1.Close();
