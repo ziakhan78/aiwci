@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIWCI E-Voting 2020-2021 - Home </title>
+    <link rel="shortcut icon" href="https://www.goradiainfotech.com/images/favicon.ico" type="image/x-icon" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div class="topbar">
+            <div class="container">
+                <div class="row pt-2 pb-2">
+                    <div class=" col-8">
+                        <a href="mailto: support@aiwcivoting.in">
+                            <i class="fa fa-envelope"></i>&nbsp;support@aiwcivoting.in</a>
+                    </div>
+                    <div class="col-4 float-right text-right">
+                        <div>
+                            <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
+                            <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" Visible="false"><i class="fa fa-sign-out"></i> Sign Out</asp:LinkButton>
+                            <asp:LinkButton ID="btnLogin" PostBackUrl="~/login.aspx" runat="server"><i class="fa fa-user-circle"></i> Login</asp:LinkButton>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <header id="myHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12  col-sm-12 text-left heading ">
+                        <h1>Association of Inner Wheel Clubs in India
+			<span>E-Voting 2020 - 2021</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-custom">
+                <div class="container">
+                    <a class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarCustom">
+                        <span class="text-white-50" style="font-size: 14px">Menu</span> <span class="navbar-toggler-icon"></span>
+                    </a>
+                    <div class="navbar-collapse collapse" id="navbarCustom">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item " id="home" runat="server">
+                                <a class="nav-link" href="Default.aspx">Home</a>
+                            </li>
+
+                            <li class="nav-item" id="HowToVote" runat="server">
+                                <a class="nav-link" href="HowToVote.aspx">How to Vote </a>
+                            </li>
+                            <li class="nav-item" id="candidate" runat="server">
+                                <a class="nav-link" href="Candidate.aspx">Candidates</a>
+                            </li>
+
+                            <li class="nav-item" id="onlinevoting" runat="server">
+                                <a class="nav-link" href="OnlineVoting.aspx">Online Voting </a>
+                            </li>
+                            <li class="nav-item" id="faqs" runat="server"></li>
+
+                            <li class="nav-item" id="contact" runat="server">
+                                <a class="nav-link" href="Contact.aspx">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="banner" role="banner">
+            <img id="bannerImg" class="img-fluid" src="images/inner-banner.jpg" alt="" style="width: 100%;" />
+        </section>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <footer class="bg-light mt-3">
+        <div class="container">
+            <div class="row pl-1 pr-1">
+
+                <div class="col-lg-6 p-1 ">
+                    <div class="footer_talignleft">Copyright © 2020 Association of Inner Wheel Clubs in India |<span class=""> All Rights Reserved</span> </div>
+                    <div class="custom_footer">
+                        <p>Copyright © 2020 Association of Inner Wheel Clubs in India</p>
+                        <p>All Rights Reserved </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-1 ">
+                    <div class="footer_talignright">Site Designed & Maintained By <a href="https://www.goradiainfotech.com/" target="_blank">Goradia Infotech</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

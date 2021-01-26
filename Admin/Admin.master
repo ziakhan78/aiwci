@@ -1,0 +1,200 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Association of Inner Wheel Clubs in India E-Voting 2020 - 2021</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Zia-9967123398" />
+    <link rel="shortcut icon" href="../favicon.png" />
+    <!-- The styles -->
+    <link href="css/bootstrap-cerulean.min.css" rel="stylesheet" />
+    <link href="css/charisma-app.css" rel="stylesheet" />
+    <%--<link href="css/bootstrap.css" rel="stylesheet" />--%>
+
+     <%-- <link href="css/animate.min.css" rel="stylesheet" />
+
+     <link href="bower_components/fullcalendar/dist/fullcalendar.css" rel='stylesheet'>
+    <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="js/notify.min.js"></script>--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .mandSymb {
+            color:#ff0000;
+            font-size:18px;
+        }
+        h6{
+            font-size:14px;
+        }
+
+      .ChkBoxClass input {
+          margin: 3px 3px 7px 7px;
+      }
+
+       .RadGrid_Bootstrap .rgRow>td, .RadGrid_Bootstrap .rgAltRow>td, .RadGrid_Bootstrap .rgEditRow>td{
+        padding:0px 5px 0px 5px;
+        margin:0px 5px 0px 5px;
+    }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            <!-- topbar starts -->
+            <div class="navbar navbar-default" role="navigation">
+
+                <div class="navbar-inner">
+                    <button type="button" class="navbar-toggle pull-left animated flip">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="">
+                       <%-- <img alt="" src="../images/Admin-Header.jpg" class="hidden-xs" />--%>
+                        <span>Association of Inner Wheel Clubs in India E-Voting 2020 - 2021</span></a>
+
+                    <!-- user dropdown starts -->
+                    <div>                        
+                        <div class="btn-group pull-right">
+                            <%--<button class="btn btn-default ">--%>
+                            <asp:Label ID="lblwelcome" runat="server" Font-Size="Medium" ForeColor="White"></asp:Label>
+                            <span class="hidden-sm hidden-xs"><a href="Default.aspx" class="btn btn-default"><i class="glyphicon glyphicon-user"></i>&nbsp;Logout</a></span>
+                            <%--</button>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- topbar ends -->
+            <div class="ch-container">
+                <div class="row">
+                    <!-- left menu starts -->
+                    <div class="col-sm-2 col-lg-2">
+                        <div class="sidebar-nav">
+                            <div class="nav-canvas">
+                                <div class="nav-sm nav nav-stacked">
+                                </div>
+                                <ul class="nav nav-pills nav-stacked main-menu">
+                                    <%-- <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a></li>--%>
+                                    <li id="AdminUser" runat="server"><a class="ajax-link" href="ViewAdminUsers.aspx"><i class="glyphicon glyphicon-user"></i><span>&nbsp;Admin Users</span></a></li>
+                                    <li><a class="ajax-link" href="ViewDistrictNo.aspx"><i class="glyphicon glyphicon-globe"></i><span>&nbsp;District No.</span></a></li>
+                                    <li><a class="ajax-link" href="ViewDistrictClubs.aspx"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;District Clubs</span></a></li>
+                                    <li><a class="ajax-link" href="ViewDistrictClubsReport.aspx"><i class="glyphicon glyphicon-export"></i><span>&nbsp;District Clubs Report</span></a></li>
+                                    <li><a class="ajax-link" href="ViewClubPresidents.aspx"><i class="glyphicon glyphicon-user"></i><span>&nbsp;Club Presidents</span></a></li>
+                                    <li><a class="ajax-link" href="ViewClubPresidentsReport.aspx"><i class="glyphicon glyphicon-export"></i><span>&nbsp;Club Presidents Report</span></a></li>
+                                      <li><a class="ajax-link" href="ViewExecutiveCommittee.aspx"><i class="glyphicon glyphicon-user"></i><span>&nbsp;Executive Committee</span></a></li>
+                                    <li><a class="ajax-link" href="ViewElectionDate.aspx"><i class="glyphicon glyphicon-calendar"></i><span>&nbsp;Election</span></a></li>
+                                    <li><a class="ajax-link" href="ViewCandidates.aspx"><i class="glyphicon glyphicon-user"></i><span>&nbsp;Candidates</span></a></li>
+                                     <li><a class="ajax-link" href="SendLogin.aspx"><i class="glyphicon glyphicon-user"></i><span>&nbsp;Send Login</span></a></li>
+
+                                  <li><a class="ajax-link" href="ViewVotingResult.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;Voting Result</span></a></li>
+                                    <li><a class="ajax-link" href="ViewVotingResultDistrictWise.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;Voting Result District Wise</span></a></li>
+                                    <%--<li id="ClubwiseResult" runat="server"><a class="ajax-link" href="ViewVotingResultClubwise.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;Clubwise Voting Result</span></a></li>
+                                    <li><a class="ajax-link" href="ViewVotingResultNonePref.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;None Preference Voting</span></a></li>
+                                    <li><a class="ajax-link" href="ViewVotingResultReport.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;Reports in Excel Format</span></a></li>--%>
+
+                                     <li id="VotedClub" runat="server"><a class="ajax-link" href="ViewVotedClubsReport.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;View Voted Club Report</span></a></li>
+                                     <li id="NotVotedClub" runat="server"><a class="ajax-link" href="ViewNotVotedClubsReport.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;View Not Voted Club Report</span></a></li>
+
+                                   
+                                    <li><a class="ajax-link" href="ViewFeedback.aspx"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;Feedback Enquiry</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/span-->
+                    <!-- left menu ends -->
+
+                    <!-- Ajax Loader start -->
+
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server"  DisplayAfter="100">
+                        <ProgressTemplate>
+                            <div style="text-align: center;">
+                                <img src="images/loading.gif" alt="" />
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+
+                    <cc1:AlwaysVisibleControlExtender ID="AlwaysVisibleControlExtender2" runat="server"
+                        TargetControlID="UpdateProgress1" HorizontalSide="Center"
+                        VerticalSide="Middle">
+                    </cc1:AlwaysVisibleControlExtender>
+
+                    <!-- Ajax Loader End -->
+
+                    <div id="content" class="col-lg-10 col-sm-10">
+                        <!-- content starts -->
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <!-- content ends -->
+                    </div>
+                    <!--/#content.col-md-0-->
+                </div>
+                <!--/fluid-row-->
+                <hr />
+            </div>
+            <!--/.fluid-container-->
+
+            <!-- external javascript -->
+               <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+            <!-- library for cookie management -->
+            <script src="js/jquery.cookie.js"></script>
+            <!-- calender plugin -->
+            <script src='bower_components/moment/min/moment.min.js'></script>
+            <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+            <!-- data table plugin -->
+            <script src='js/jquery.dataTables.min.js'></script>
+
+            <!-- select or dropdown enhancer -->
+            <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+            <!-- plugin for gallery image view -->
+            <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+            <!-- notification plugin -->
+            <script src="js/jquery.noty.js"></script>
+            <!-- library for making tables responsive -->
+            <script src="bower_components/responsive-tables/responsive-tables.js"></script>
+            <!-- tour plugin -->
+            <script src="bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+            <!-- star rating plugin -->
+            <script src="js/jquery.raty.min.js"></script>
+            <!-- for iOS style toggle switch -->
+            <script src="js/jquery.iphone.toggle.js"></script>
+            <!-- autogrowing textarea plugin -->
+            <script src="js/jquery.autogrow-textarea.js"></script>
+            <!-- multiple file upload plugin -->
+            <script src="js/jquery.uploadify-3.1.min.js"></script>
+            <!-- history.js for cross-browser state change on ajax -->
+            <script src="js/jquery.history.js"></script>
+            <!-- application script for Charisma demo -->
+            <script src="js/charisma.js"></script>
+        </div>
+
+    </form>
+</body>
+</html>
